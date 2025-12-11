@@ -3,6 +3,7 @@
 This repository contains the FINAL Team Task Management API built with Node.js, Express, Sequelize, and SQLite.
 
 ## Features
+
 - Users, Projects, Tasks (CRUD)
 - JWT-based authentication (register/login)
 - Role-based authorization (admin, user)
@@ -14,23 +15,27 @@ This repository contains the FINAL Team Task Management API built with Node.js, 
 ## Quickstart (local)
 
 1. Install dependencies:
+
 ```bash
 npm install
 ```
 
 2. Copy environment file and set secret:
+
 ```powershell
 copy .env.example .env
 # edit .env and set JWT_SECRET
 ```
 
 3. Create database & seed with sample data:
+
 ```bash
 npm run setup
 npm run seed
 ```
 
 4. Start the dev server:
+
 ```bash
 npm run dev
 ```
@@ -38,11 +43,13 @@ npm run dev
 Server runs on `http://localhost:3000` by default.
 
 ## Auth (example)
+
 - Admin user (seeded): `admin@example.com` / `adminpass`
 - Login: `POST /auth/login` with JSON body `{ "email":"admin@example.com", "password":"adminpass" }`
 - Use returned token in `Authorization: Bearer <token>` header for protected endpoints.
 
 ## Endpoints (summary)
+
 - `POST /auth/register` - register new user
 - `POST /auth/login` - login and receive JWT
 - `GET /users` - list users (admin only)
@@ -53,13 +60,15 @@ Server runs on `http://localhost:3000` by default.
 - `GET /tasks` - list tasks (supports filters & pagination)
 
 ## Tests
+
 Run tests:
+
 ```bash
 npm test
 ```
 
 ## Deployment
-Recommended: Deploy to Render with a Postgres DB for persistence.
+
 - Build command: `npm install`
 - Start command: `node index.js`
-- Environment variables: `NODE_ENV`, `JWT_SECRET`, `DATABASE_URL` (if using Postgres)
+- Environment variables: `NODE_ENV`, `JWT_SECRET`, `DATABASE_URL`
